@@ -1,6 +1,8 @@
 # IU Retail A/B Testing Data Pipeline (Snowflake + dbt + Tableau)
 
 This project simulates an **A/B testing framework** to evaluate the impact of different checkout versions on user behavior and purchase patterns for IU Retail. The end-to-end pipeline supports scalable data ingestion, transformation, and reporting using modern ELT tools.
+
+
 Built as part of IU Center of Education and Research in Retail’s experimentation platform
 ---
 
