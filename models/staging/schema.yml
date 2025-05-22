@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: snowflake_source
+    schema: RAW_LAYER
+    description: "Our raw source data for A/B testing"
+
+    tables:
+      - name: ab_test_orders
+        description: "Orders table for A/B testing"
+
+models:
+  - name: stg_ab_test_orders
+    description: "Staging model for ab_test_orders"
+    columns:
+      - name: order_id
+        description: "Unique order ID"
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "Unique user ID"
+        tests:
+          - not_null

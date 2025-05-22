@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: incremental_ab_test_orders
+    description: "Final processed A/B test orders table, enriched and incrementally updated."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: "Unique identifier for the user who made the order"
+        tests:
+          - not_null
+
+      - name: checkout_version
+        description: "Version of checkout experience presented to the user"
+
+      - name: items_in_cart
+        description: "Number of items in the user's cart"
+
+      - name: items_list
+        description: "Comma-separated list of items"
+
+      - name: upsell_clicked
+        description: "Whether the user clicked on an upsell prompt"
+
+      - name: order_value
+        description: "Total value of the order placed"
+
+      - name: date_of_purchase
+        description: "Timestamp when the purchase was made"
+
+      - name: change_time
+        description: "Timestamp indicating when the record was loaded (used for incremental logic)"
+
+      - name: items_array
+        description: "Array of individual items parsed from items_list"
+
+      - name: purchase_year
+        description: "Year extracted from date_of_purchase"
+
+      - name: purchase_month
+        description: "Month extracted from date_of_purchase"
+
+      - name: purchase_day
+        description: "Day extracted from date_of_purchase"
